@@ -1,4 +1,3 @@
-import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -9,10 +8,18 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import React from "react";
+import React from 'react';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
-const pages = ["Iinicio", "Deportes", "Tecnologia", "Contacto"];
+const pages = [
+    { label: 'Inicio', link: '/' },
+    { label: 'Deporte', link: '/category/deportes' },
+    { label: 'Tecnologia', link: '/category/tecnologia' },
+    { label: 'Carro', link: '/Carro' },
+    { label: 'Checkout', link: '/checkout' },
+    { label: 'Contacto', link: '/contacto' },
+];
 
 export default function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -25,14 +32,14 @@ export default function NavBar() {
     };
 
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
+        <AppBar position='static' textDecoration='none' sx={{ background:'black' }}>
+            <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <Typography
-                        variant="h6"
+                        variant='h6'
                         noWrap
-                        component="a"
-                        href="/"
+                        component='a'
+                        href='/'
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -47,17 +54,17 @@ export default function NavBar() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
+                            size='large'
+                            aria-label='account of current user'
+                            aria-controls='menu-appbar'
+                            aria-haspopup='true'
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+                            color='inherit'
                         >
                             <MenuIcon />
                         </IconButton>
                         <Menu
-                            id="menu-appbar"
+                            id='menu-appbar'
                             anchorEl={anchorElNav}
                             anchorOrigin={{
                                 vertical: 'bottom',
@@ -75,17 +82,19 @@ export default function NavBar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign='center'>
+                                        <Link to={page.link} style={{ textDecoration: 'none' }}>{page.label}</Link>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
                     <Typography
-                        variant="h5"
+                        variant='h5'
                         noWrap
-                        component="a"
-                        href=""
+                        component='a'
+                        href=''
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -102,11 +111,11 @@ export default function NavBar() {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.label}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{ my: 2, display: 'block' }}
                             >
-                                {page}
+                                <Link to={page.link} style={{ textDecoration: 'none' }}>{page.label}</Link>
                             </Button>
                         ))}
                     </Box>
