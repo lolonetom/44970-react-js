@@ -45,4 +45,6 @@ Ve a al página local:
 
   - En en componente App.js tendrás que poner tus datos de conexión a tu base de datos en FireStore
   - La colección de productos contiene como strings `idCategory` ; `img` ; `name` y como number `price` y `stock`
-  - Tambien necesitaras crear una coleccion con el nombre `orders` en donde se almacenarán las ordenes de compra.gi
+  - Tambien necesitaras crear una coleccion con el nombre `orders` en donde se almacenarán las ordenes de compra.
+
+  ![images](src/assets/images/firebase-ejemplo.png)
