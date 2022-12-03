@@ -15,7 +15,7 @@ Por el momento se puede agregar productos a un carrito sin permnencia de datos e
 
 ## Captura de Pantalla
 
-
+![image](src/assets/images/captura-sitio-index.png)
 
 
 
