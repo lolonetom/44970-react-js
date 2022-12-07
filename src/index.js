@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { initializeApp } from "firebase/app";
 initializeApp({
   apiKey: "AIzaSyCZw1LjnKdAlq7YOHdQRQ_CWF4t_zJoy1I",
-  authDomain: "proyecto-react-94935.firebaseapp.com",
-  projectId: "proyecto-react-94935",
-  storageBucket: "proyecto-react-94935.appspot.com",
+  authDomain: "proyecto-reactjs-9493500.firebaseapp.com",
+  projectId: "proyecto-reactjs-9493500",
+  storageBucket: "proyecto-reactjs-9493500.appspot.com",
   messagingSenderId: "572082547531",
   appId: "1:572082547531:web:c9230d8ccc2f5d479016ce"
 });
