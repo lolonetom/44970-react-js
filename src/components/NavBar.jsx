@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import { color } from '@mui/system';
 
 const pages = [
     { label: 'Inicio', link: '/' },
@@ -115,7 +116,7 @@ export default function NavBar() {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, display: 'block' }}
                             >
-                                <Link to={page.link} style={{ textDecoration: 'none' }}>{page.label}</Link>
+                                <Link to={page.link} style={{ textDecoration: 'none', color: "#FFFF" }}>{page.label}</Link>
                             </Button>
                         ))}
                     </Box>
